@@ -1,0 +1,104 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-image: url(../Assets/bg1.jpeg); */
+  background-color: rgb(106, 183, 235);
+}
+
+.card {
+  width: 100%;
+  height: 70vh;
+  max-width: 440px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 50px 35px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(244, 244, 245, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.formElement {
+  display: flex;
+  flex-direction: column;
+}
+.btn {
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 500;
+  background: #fff;
+  color: rgb(86, 86, 86);
+  padding: 10px 30px;
+  border-radius: 30px;
+  margin: 50px 0 10px 0;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+form .txt_field {
+  position: relative;
+  border-bottom: 2px solid #fff;
+  margin: 30px 0;
+}
+
+form textarea {
+  position: relative;
+  border-bottom: 2px solid #fff;
+  margin: 30px 0;
+}
+
+.txt_field input {
+  width: 100%;
+  padding: 0 5px;
+  height: 40px;
+  font-size: 20px;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.txt_field label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  color: #fff;
+  transform: translateY(-50%);
+  font-size: 16px;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.txt_field textarea {
+  background: #fff;
+  width: 100%;
+  height: 30vh;
+  margin-top: 20px;
+  font-size: 20px;
+  resize: none;
+}
+
+.txt_field span::before {
+  content: "";
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #2691d9;
+}
+
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label {
+  top: -5px;
+  color: #2691d9;
+}
+
+
+.txt_field input:focus ~ span::before,
+.txt_field input:valid ~ span::before {
+  width: 100%;
+}
