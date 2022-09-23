@@ -2,18 +2,25 @@ import React from "react";
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
 import GitHubIcon from '@mui/icons-material/GitHub';
-
+import gifIcon from "../Assets/gif.gif";
+import { motion } from "framer-motion";
 import '../Styles/Home.css'
 
 function Home() {
 
   return (
-    <div className="home">
+    <motion.div className="home"
+      initial={{opacity:0}}
+      animate={{opacity:1}}
+      transition={{duration:1}}
+    >
       <div className="about">
+        <div className="greeting">
         <h2>Hi, My Name is Abhishek</h2>
+        <img src={gifIcon} alt=""/>
+        </div>
         <div className="prompt">
           <p>A software developer with a passion for learning and creating.</p>
-          
           <div className="socialMediaDiv">
             <div className="icon linkedindiv">
               <div className="tooltip">Linkedin</div>
@@ -38,7 +45,12 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="skills">
+      <motion.div className="skills"
+        initial={{x:-400}}
+        whileInView={{x:0}}
+        viewport={{once:false, amount:0.1}}
+        transition={{duration:1}}
+      >
         <h1>Skills</h1>
         <ol className="list">
           <li className="item">
@@ -60,9 +72,8 @@ function Home() {
             </span>
           </li>
         </ol>
-        
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
 
